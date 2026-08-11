@@ -64,7 +64,54 @@ paths:
                     type: string
                 required:
                   - out
+  /books:
+    get:
+      tags:
+        - Books
+      summary: Returns all books
+      operationId: listBooks
+      responses:
+        '200':
+          description: A successful response returning all books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+    post:
+      tags:
+        - Books
+      summary: Adds a book to the database
+      operationId: addBook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '200':
+          description: A successful response returning the created book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
 components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type: string
+        author:
+          type: string
+      required:
+        - title
+        - author
   securitySchemes:
     basicAuth:
       type: http
