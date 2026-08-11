@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 public class HelloResource {
     @GET
     @Path("hello")
+    @Secured
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@QueryParam("name") @DefaultValue("Jetty + Jersey") String name) {
         return "Hello " + name;

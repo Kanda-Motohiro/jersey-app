@@ -30,5 +30,10 @@
       <version>6.0.0</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.kohsuke</groupId>
+      <artifactId>libpam4j</artifactId>
+      <version>1.11</version>
+    </dependency>
   </dependencies>
 </project>
