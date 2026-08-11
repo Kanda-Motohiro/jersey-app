@@ -13,13 +13,18 @@ import java.util.Base64;
 import org.jvnet.libpam.PAM;
 import org.jvnet.libpam.PAMException;
 
-@Secured
 @Provider
 @Priority(Priorities.AUTHENTICATION)
 public class AuthenticationFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        String path = requestContext.getUriInfo().getPath();
+        // Apply authentication check specifically for hello endpoint
+        if (!"hello".equals(path) && !path.endsWith("/hello")) {
+            return;
+        }
+
         String authHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
         if (authHeader == null || !authHeader.toLowerCase().startsWith("basic ")) {
