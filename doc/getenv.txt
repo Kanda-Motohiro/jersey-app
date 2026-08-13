@@ -1,0 +1,177 @@
+kanda@opensuse:~> curl -s http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/getenv | python3 -m json.tool
+{
+    "uriInfo": {
+        "present": true,
+        "absolutePath": "http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/getenv",
+        "baseUri": "http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/",
+        "requestUri": "http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/getenv",
+        "path": "getenv",
+        "matchedResources": [
+            "com.example.GetEnvResourceImpl@5e2c17da"
+        ],
+        "pathParameters": {},
+        "queryParameters": {}
+    },
+    "httpHeaders": {
+        "present": true,
+        "acceptableMediaTypes": [
+            "*/*"
+        ],
+        "acceptLanguages": [
+            "*"
+        ],
+        "contentType": null,
+        "requestHeaders": {
+            "Host": [
+                "localhost:8080"
+            ],
+            "User-Agent": [
+                "curl/8.14.1"
+            ],
+            "Accept": [
+                "*/*"
+            ]
+        }
+    },
+    "request": {
+        "present": true,
+        "method": "GET",
+        "absolutePath": "http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/getenv",
+        "requestUri": "http://localhost:8080/jersey-jetty-1.0-SNAPSHOT/api/getenv",
+        "path": "getenv"
+    },
+    "securityContext": {
+        "present": true,
+        "authenticationScheme": null,
+        "secure": false,
+        "userPrincipal": null
+    },
+    "resourceInfo": {
+        "present": true,
+        "resourceClass": "com.example.GetEnvResourceImpl",
+        "methodName": "getenv",
+        "returnType": "java.util.Map",
+        "parameterTypes": [
+            "interface jakarta.ws.rs.core.SecurityContext",
+            "interface jakarta.ws.rs.core.Request",
+            "interface jakarta.ws.rs.core.HttpHeaders",
+            "interface jakarta.ws.rs.core.UriInfo",
+            "interface jakarta.ws.rs.container.ResourceInfo",
+            "interface jakarta.ws.rs.core.Configuration",
+            "interface jakarta.servlet.ServletConfig",
+            "interface jakarta.servlet.ServletContext",
+            "interface jakarta.servlet.http.HttpServletRequest"
+        ]
+    },
+    "configuration": {
+        "present": true,
+        "propertyNames": [
+            "jetty.deploy.baseResource",
+            "org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
+            "org.eclipse.jetty.ee11.webapp.webFragments",
+            "org.eclipse.jetty.tlds",
+            "org.eclipse.jetty.util.DecoratedObjectFactory",
+            "jetty.deploy.paths.other",
+            "org.eclipse.jetty.webapp.tmpResourceBase",
+            "org.eclipse.jetty.server.Executor",
+            "jetty.deploy.containerScanJarPattern",
+            "jakarta.servlet.context.tempdir",
+            "jersey.config.server.provider.packages",
+            "jetty.deploy.paths.main",
+            "jersey.config.server.jsonFeature",
+            "org.eclipse.jetty.webapp.serverClasses",
+            "jetty.deploy.defaultsDescriptor",
+            "jetty.deploy.war",
+            "jersey.config.server.provider.classnames",
+            "jetty.deploy.defaultContextPath",
+            "org.eclipse.jetty.server.Request.maxFormKeys",
+            "org.eclipse.jetty.resources",
+            "org.eclipse.jetty.webapp.systemClasses",
+            "org.eclipse.jetty.server.Request.maxFormContentSize",
+            "jersey.config.json.string.length",
+            "jetty.deploy.defaultContextHandlerClass"
+        ]
+    },
+    "httpServletRequest": {
+        "present": true,
+        "remoteAddr": "[0:0:0:0:0:0:0:1]",
+        "remoteHost": "[0:0:0:0:0:0:0:1]",
+        "remotePort": 39370,
+        "localAddr": "[0:0:0:0:0:0:0:1]",
+        "localName": "[0:0:0:0:0:0:0:1]",
+        "localPort": 8080,
+        "serverName": "localhost",
+        "serverPort": 8080,
+        "scheme": "http",
+        "method": "GET",
+        "protocol": "HTTP/1.1",
+        "requestURI": "/jersey-jetty-1.0-SNAPSHOT/api/getenv",
+        "contextPath": "/jersey-jetty-1.0-SNAPSHOT",
+        "servletPath": "/api",
+        "pathInfo": "/getenv",
+        "queryString": null,
+        "isSecure": false,
+        "characterEncoding": null,
+        "contentType": null,
+        "contentLength": -1,
+        "headerNames": [
+            "Host",
+            "User-Agent",
+            "Accept"
+        ],
+        "headers": {
+            "Host": [
+                "localhost:8080"
+            ],
+            "User-Agent": [
+                "curl/8.14.1"
+            ],
+            "Accept": [
+                "*/*"
+            ]
+        }
+    },
+    "servletConfig": {
+        "present": true,
+        "servletName": "jersey-servlet",
+        "initParameterNames": [
+            "jersey.config.server.provider.classnames",
+            "jersey.config.server.provider.packages"
+        ],
+        "initParameters": {
+            "jersey.config.server.provider.classnames": "com.example.HelloResourceImpl,com.example.WorldResourceImpl,com.example.ConcatResourceImpl,com.example.BookResourceImpl,com.example.RootResourceImpl,com.example.GetEnvResourceImpl,com.example.AuthenticationFilter",
+            "jersey.config.server.provider.packages": "com.example"
+        }
+    },
+    "servletContext": {
+        "present": true,
+        "contextPath": "/jersey-jetty-1.0-SNAPSHOT",
+        "initParameterNames": [],
+        "initParameters": {},
+        "attributeNames": [
+            "jetty.deploy.baseResource",
+            "org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
+            "org.eclipse.jetty.util.DecoratedObjectFactory",
+            "app.paths",
+            "jetty.deploy.paths.other",
+            "org.eclipse.jetty.webapp.tmpResourceBase",
+            "org.eclipse.jetty.server.Executor",
+            "jetty.deploy.containerScanJarPattern",
+            "jakarta.servlet.context.tempdir",
+            "jetty.deploy.paths.main",
+            "org.eclipse.jetty.webapp.serverClasses",
+            "jetty.deploy.defaultsDescriptor",
+            "jetty.deploy.war",
+            "jetty.deploy.defaultContextPath",
+            "org.eclipse.jetty.server.Request.maxFormKeys",
+            "org.eclipse.jetty.webapp.systemClasses",
+            "org.eclipse.jetty.server.Request.maxFormContentSize",
+            "jetty.deploy.defaultContextHandlerClass"
+        ],
+        "realPath": "/tmp/jetty-0_0_0_0-8080-jersey-jetty-1_0-SNAPSHOT_war-_jersey-jetty-1_0-SNAPSHOT-any-9079141766847706939/webapp/",
+        "serverInfo": "jetty/12.1.12",
+        "majorVersion": 6,
+        "minorVersion": 1
+    }
+}
+

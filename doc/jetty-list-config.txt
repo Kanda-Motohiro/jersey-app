@@ -1,0 +1,131 @@
+kanda@opensuse:~/jetty-base> java -jar /opt/jetty-home-12.1.12/start.jar --list-config
+
+Enabled Modules:
+----------------
+  0) resources                 transitive provider of resources for logging-jetty
+  1) logging/slf4j             transitive provider of logging/slf4j for logging-jetty
+                               dynamic dependency of logging-jetty
+  2) logging-jetty             transitive provider of logging for threadpool
+                               transitive provider of logging for bytebufferpool
+                               transitive provider of logging for scheduler
+  3) bytebufferpool            ${jetty.base}/start.d/bytebufferpool.ini
+  4) http-config               ${jetty.base}/start.d/http-config.ini
+  5) scheduler                 ${jetty.base}/start.d/scheduler.ini
+  6) threadpool                ${jetty.base}/start.d/threadpool.ini
+  7) server                    ${jetty.base}/start.d/server.ini
+  8) deployer-standard         ${jetty.base}/start.d/deployer-standard.ini
+  9) deployment-scanner        ${jetty.base}/start.d/deployment-scanner.ini
+ 10) sessions                  ${jetty.base}/start.d/sessions.ini
+ 11) ee11-servlet              transitive provider of ee11-servlet for ee11-security
+                               transitive provider of ee11-servlet for ee11-webapp
+ 12) security                  transitive provider of security for ee11-security
+ 13) ee11-security             transitive provider of ee11-security for ee11-webapp
+ 14) ee-webapp                 ${jetty.base}/start.d/ee-webapp.ini
+ 15) ee11-webapp               ${jetty.base}/start.d/ee11-webapp.ini
+ 16) ee11-deploy               ${jetty.base}/start.d/ee11-deploy.ini
+ 17) http                      ${jetty.base}/start.d/http.ini
+ 18) ssl-context               ${jetty.base}/start.d/ssl-context.ini
+ 19) ssl                       ${jetty.base}/start.d/ssl.ini
+ 20) https                     ${jetty.base}/start.d/https.ini
+
+JVM Version & Properties:
+-------------------------
+ java.home = /usr/lib64/jvm/java-21-openjdk-21
+ java.vm.vendor = Oracle Corporation
+ java.vm.version = 21.0.12+8-suse-01600-x8664
+ java.vm.name = OpenJDK 64-Bit Server VM
+ java.vm.info = mixed mode, sharing
+ java.runtime.name = OpenJDK Runtime Environment
+ java.runtime.version = 21.0.12+8-suse-01600-x8664
+ java.io.tmpdir = /tmp
+ user.dir = /home/kanda/jetty-base
+ user.language = ja
+ user.country = JP
+
+Jetty Version & Properties:
+---------------------------
+ jetty.version = 12.1.12
+ jetty.tag.version = jetty-12.1.12
+ jetty.build = 10dd3948f37767b84cc2c62358364f042e51dbbe
+ jetty.home = /opt/jetty-home-12.1.12
+ jetty.base = /home/kanda/jetty-base
+
+Config Search Order:
+--------------------
+ <command-line>
+ ${jetty.base} -> /home/kanda/jetty-base
+ ${jetty.home} -> /opt/jetty-home-12.1.12
+
+System Properties:
+------------------
+ (no system properties specified)
+
+Properties: Jetty
+-----------------
+ java.version = 21.0.12
+ java.version.platform = 21
+ jetty.base = /home/kanda/jetty-base
+ jetty.base.uri = file:///home/kanda/jetty-base
+ jetty.home = /opt/jetty-home-12.1.12
+ jetty.home.uri = file:///opt/jetty-home-12.1.12
+ jetty.ssl.port = 8443
+ jetty.sslContext.keyManagerPassword = xxx
+ jetty.sslContext.keyStorePassword = xxx
+ jetty.sslContext.keyStorePath = resources/keystore.p12
+ jetty.sslContext.protocol = TLSv1.3
+ jetty.webapp.addHiddenClasses = org.eclipse.jetty.logging.,${jetty.home.uri}/lib/logging/,org.slf4j.
+ runtime.feature.alpn = true
+ slf4j.version = 2.0.17
+
+Classpath: Jetty
+----------------
+Version Information on 12 entries in the classpath.
+Note: order presented here is how they would appear on the classpath.
+      changes to the --module=name command line options will be reflected here.
+ 0:                    (dir) | ${jetty.base}/resources
+ 1:                   2.0.17 | ${jetty.home}/lib/logging/slf4j-api-2.0.17.jar | https://opensource.org/license/mit
+ 2:                  12.1.12 | ${jetty.home}/lib/logging/jetty-slf4j-impl-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 3:                  12.1.12 | ${jetty.home}/lib/jetty-http-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 4:                  12.1.12 | ${jetty.home}/lib/jetty-util-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 5:                  12.1.12 | ${jetty.home}/lib/jetty-server-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 6:                  12.1.12 | ${jetty.home}/lib/jetty-xml-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 7:                  12.1.12 | ${jetty.home}/lib/jetty-io-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 8:                  12.1.12 | ${jetty.home}/lib/jetty-deploy-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 9:                  12.1.12 | ${jetty.home}/lib/jetty-session-12.1.12.jar | EPL-2.0 OR Apache-2.0
+10:                  12.1.12 | ${jetty.home}/lib/jetty-security-12.1.12.jar | EPL-2.0 OR Apache-2.0
+11:                  12.1.12 | ${jetty.home}/lib/jetty-ee-webapp-12.1.12.jar | EPL-2.0 OR Apache-2.0
+
+Active XMLs: Jetty
+------------------
+ ${jetty.home}/etc/jetty-bytebufferpool.xml
+ ${jetty.home}/etc/jetty-http-config.xml
+ ${jetty.home}/etc/jetty-scheduler.xml
+ ${jetty.home}/etc/jetty-threadpool.xml
+ ${jetty.home}/etc/jetty.xml
+ ${jetty.home}/etc/jetty-deployer-standard.xml
+ ${jetty.home}/etc/jetty-deployment-scanner.xml
+ ${jetty.home}/etc/sessions/id-manager.xml
+ ${jetty.home}/etc/jetty-ee-webapp.xml
+ ${jetty.home}/etc/jetty-http.xml
+ ${jetty.home}/etc/jetty-ssl-context.xml
+ ${jetty.home}/etc/jetty-ssl.xml
+ ${jetty.home}/etc/jetty-https.xml
+
+Properties: ee11
+----------------
+ (no properties specified)
+
+Classpath: ee11
+---------------
+Version Information on 3 entries in the classpath.
+Note: order presented here is how they would appear on the classpath.
+      changes to the --module=name command line options will be reflected here.
+ 0:                    6.1.0 | ${jetty.home}/lib/jakarta.servlet-api-6.1.0.jar | http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html
+ 1:                  12.1.12 | ${jetty.home}/lib/jetty-ee11-servlet-12.1.12.jar | EPL-2.0 OR Apache-2.0
+ 2:                  12.1.12 | ${jetty.home}/lib/jetty-ee11-webapp-12.1.12.jar | EPL-2.0 OR Apache-2.0
+
+Active XMLs: ee11
+-----------------
+ ${jetty.home}/etc/jetty-ee11-webapp.xml
+ ${jetty.home}/etc/jetty-ee11-deploy.xml
+
