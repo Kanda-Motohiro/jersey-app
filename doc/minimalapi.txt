@@ -1,0 +1,311 @@
+openapi の yaml からコードを生成する。
+
+https://github.com/openapitools/openapi-generator
+
+kanda@opensuse:~> java -jar openapi-generator-cli-7.24.0.jar help
+usage: openapi-generator-cli <command> [<args>]
+
+The most commonly used openapi-generator-cli commands are:
+    author        Utilities for authoring generators or customizing templates.
+    batch         Generate code in batch via external configs.
+    config-help   Config help for chosen lang
+    generate      Generate code with the specified generator.
+    help          Display help information about openapi-generator
+    list          Lists the available generators
+    meta          MetaGenerator. Generator for creating a new template set and configuration for Codegen.  The output will be based on the language you specify, and includes default templates to include.
+    validate      Validate specification
+    version       Show version information used in tooling
+
+See 'openapi-generator-cli help <command>' for more information on a specific
+command.
+
+kanda@opensuse:~> java -jar openapi-generator-cli-7.24.0.jar list
+The following generators are available:
+
+CLIENT generators:
+    - ada
+    - android
+    - apex
+    - bash
+    - c
+    - clojure
+    - cpp-boost-beast-client
+    - cpp-oatpp-client
+    - cpp-qt-client
+    - cpp-restsdk
+    - cpp-tiny (beta)
+    - cpp-tizen
+    - cpp-ue4 (beta)
+    - crystal (beta)
+    - csharp
+    - dart
+    - dart-dio
+    - eiffel
+    - elixir
+    - elm
+    - erlang-client
+    - erlang-proper
+    - gdscript
+    - go
+    - groovy
+    - haskell-http-client
+    - java
+    - java-helidon-client (beta)
+    - java-micronaut-client (beta)
+    - javascript
+    - javascript-closure-angular (beta)
+    - javascript-flowtyped
+    - jaxrs-cxf-client
+    - jetbrains-http-client (experimental)
+    - jmeter
+    - julia-client (beta)
+    - k6 (beta)
+    - kotlin
+    - lua (beta)
+    - n4js (beta)
+    - nim (beta)
+    - objc
+    - ocaml
+    - perl
+    - php
+    - php-dt (beta)
+    - php-nextgen (beta)
+    - powershell (beta)
+    - python
+    - python-pydantic-v1
+    - r
+    - ruby
+    - ruby-nextgen (beta)
+    - rust
+    - scala-akka
+    - scala-gatling
+    - scala-http4s
+    - scala-pekko
+    - scala-sttp
+    - scala-sttp4 (beta)
+    - scala-sttp4-jsoniter (beta)
+    - scalaz
+    - swift-combine
+    - swift6
+    - terraform-provider (experimental)
+    - typescript (experimental)
+    - typescript-angular
+    - typescript-aurelia
+    - typescript-axios
+    - typescript-fetch
+    - typescript-inversify
+    - typescript-jquery
+    - typescript-nestjs (experimental)
+    - typescript-node
+    - typescript-redux-query
+    - typescript-rxjs
+    - xojo-client
+    - zapier (beta)
+
+
+SERVER generators:
+    - ada-server
+    - aspnet-fastendpoints
+    - aspnetcore
+    - cpp-httplib-server
+    - cpp-oatpp-server
+    - cpp-pistache-server
+    - cpp-qt-qhttpengine-server
+    - cpp-restbed-server
+    - cpp-restbed-server-deprecated
+    - csharp-functions
+    - erlang-server
+    - fsharp-functions (beta)
+    - fsharp-giraffe-server (beta)
+    - go-echo-server (beta)
+    - go-gin-server
+    - go-server
+    - graphql-nodejs-express-server
+    - haskell
+    - haskell-yesod (beta)
+    - java-camel
+    - java-dubbo (beta)
+    - java-helidon-server (beta)
+    - java-inflector
+    - java-micronaut-server (beta)
+    - java-microprofile
+    - java-msf4j
+    - java-pkmst
+    - java-play-framework
+    - java-undertow-server
+    - java-vertx-web (beta)
+    - java-wiremock (beta)
+    - jaxrs-cxf
+    - jaxrs-cxf-cdi
+    - jaxrs-cxf-extended
+    - jaxrs-jersey
+    - jaxrs-resteasy
+    - jaxrs-resteasy-eap
+    - jaxrs-spec
+    - julia-server (beta)
+    - kotlin-misk
+    - kotlin-server
+    - kotlin-spring
+    - kotlin-vertx (beta)
+    - kotlin-wiremock (beta)
+    - nodejs-express-server (beta)
+    - php-flight (experimental)
+    - php-laravel
+    - php-lumen
+    - php-mezzio-ph
+    - php-slim4
+    - php-symfony
+    - python-aiohttp
+    - python-blueplanet
+    - python-fastapi (beta)
+    - python-flask
+    - ruby-on-rails
+    - ruby-sinatra
+    - rust-axum (beta)
+    - rust-salvo (beta)
+    - rust-server
+    - rust-server-deprecated
+    - scala-akka-http-server (beta)
+    - scala-cask
+    - scala-http4s-server
+    - scala-play-server
+    - scalatra
+    - spring
+    - typescript-nestjs-server (beta)
+
+
+DOCUMENTATION generators:
+    - asciidoc
+    - cwiki
+    - dynamic-html
+    - html
+    - html2
+    - markdown (beta)
+    - openapi
+    - openapi-yaml
+    - plantuml (beta)
+
+
+SCHEMA generators:
+    - avro-schema (beta)
+    - graphql-schema
+    - ktorm-schema (beta)
+    - mysql-schema
+    - postgresql-schema (beta)
+    - postman-collection (beta)
+    - protobuf-schema (beta)
+    - wsdl-schema (beta)
+
+
+CONFIG generators:
+    - apache2
+
+/hello だけを持つ yaml から、 jersey サーバを生成する。
+kanda@opensuse:~/app> java -jar ~/bin/openapi-generator-cli-7.24.0.jar generate --input-spec minimalapi.yaml --generator-name jaxrs-jersey --output minimalapi
+
+kanda@opensuse:~/app> ls -R minimalapi
+minimalapi:
+README.md  pom.xml  src
+
+minimalapi/src:
+gen  main
+
+minimalapi/src/gen:
+java
+
+minimalapi/src/gen/java:
+org
+
+minimalapi/src/gen/java/org:
+openapitools
+
+minimalapi/src/gen/java/org/openapitools:
+api
+
+minimalapi/src/gen/java/org/openapitools/api:
+ApiException.java        HelloApi.java             NotFoundException.java
+ApiOriginFilter.java     HelloApiService.java      RFC3339DateFormat.java
+ApiResponseMessage.java  JacksonJsonProvider.java  StringUtil.java
+
+minimalapi/src/main:
+java  webapp
+
+minimalapi/src/main/java:
+org
+
+minimalapi/src/main/java/org:
+openapitools
+
+minimalapi/src/main/java/org/openapitools:
+api
+
+minimalapi/src/main/java/org/openapitools/api:
+Bootstrap.java  factories  impl
+
+minimalapi/src/main/java/org/openapitools/api/factories:
+HelloApiServiceFactory.java
+
+minimalapi/src/main/java/org/openapitools/api/impl:
+HelloApiServiceImpl.java
+
+minimalapi/src/main/webapp:
+WEB-INF
+
+minimalapi/src/main/webapp/WEB-INF:
+web.xml
+
+思ったより、たくさんのファイルができた。
+これが、リソースのハンドラみたい。
+
+HelloApi.java
+@Path("/hello")
+public class HelloApi  {
+   private final HelloApiService delegate;
+   public HelloApi(@Context ServletConfig servletContext) {
+         delegate = HelloApiServiceFactory.getHelloApi();
+         
+    @javax.ws.rs.GET
+    @Produces({ "text/plain" })
+    public Response hello(@ApiParam(value = "", defaultValue = "Jetty + Jersey") @DefaultValue("Jetty + Jersey") @QueryParam("name")  String name,@Context SecurityContext securityContext)
+    throws NotFoundException {
+        return delegate.hello(name, securityContext);
+    }
+}
+
+これが、delegate の先
+
+HelloApiServiceImpl.java
+public class HelloApiServiceImpl extends HelloApiService {
+    @Override
+    public Response hello(String name, SecurityContext securityContext) throws NotFoundException {
+        // do some magic!
+        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+    }
+}
+
+ビルドしてみる。
+kanda@opensuse:~/app/minimalapi> mvn clean package
+なんかできた。
+kanda@opensuse:~/app/minimalapi> ls -l target/
+-rw-r--r-- 1 kanda kanda 13211  8月 14 16:33 openapi-jaxrs-server-1.0.0.jar
+動かす。
+kanda@opensuse:~/app/minimalapi> mvn jetty:run
+    at org.eclipse.jetty.annotations.AnnotationConfiguration.scanForAnnotations (AnnotationConfiguration.java:536)
+    at org.eclipse.jetty.annotations.AnnotationConfiguration.configure (AnnotationConfiguration.java:447)
+    at org.eclipse.jetty.webapp.WebAppContext.configure (WebAppContext.java:479)
+あら。
+
+pom.xml を見ると、古い。これは、 jdk21 では動かない。
+    <jetty-version>9.2.9.v20150224</jetty-version>
+    <jersey2-version>2.35</jersey2-version>
+    <servlet-api-version>4.0.4</servlet-api-version>
+
+ソースも、javax を使っている。
+import javax.servlet.ServletConfig;
+
+結論。openapi-generator-cli で、 jersey サーバのコードは生成できない。
+
+TODO
+https://github.com/ryancrandall801/openapi-test-generator
+yaml を与えて、 requests を使うテストを生成してくれるらしい。
+

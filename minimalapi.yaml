@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Minimal API
+  version: 1.0.0
+paths:
+  /hello:
+    get:
+      tags:
+        - Hello
+      summary: Returns a greeting message
+      operationId: hello
+      parameters:
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "Jetty + Jersey"
+      responses:
+        '200':
+          description: A successful response returning plain text greeting
+          content:
+            text/plain:
+              schema:
+                type: string
